@@ -39,9 +39,7 @@ const deleteDig = (req, res) => {
         if (error) {
             res.send(error.message);
         } else {
-            dataModel.find({}, (error, data) => {
-                res.send(data);
-            });
+            res.send(data);
         }
     });
 };
@@ -57,9 +55,7 @@ const updateDig = (req, res) => {
             data.img = img;
             data.level = level;
             data.save();
-            dataModel.find({}, (error, newData) => {
-                res.send(newData);
-            });
+            res.send(data);
         }
     });
 };
